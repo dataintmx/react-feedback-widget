@@ -1,9 +1,12 @@
-FROM node:20-alpine AS base
+FROM node:20 AS base
 
 # Copy the project server files
 COPY ./server /srv/feedback-api
 
 FROM base AS deps
+
+# Install prisma dependencies
+RUN apt update && apt install -y openssl
 
 # Move to the working directory
 WORKDIR /srv/feedback-api
