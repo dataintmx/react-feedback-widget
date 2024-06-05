@@ -33,5 +33,5 @@ RUN npx prisma migrate deploy
 FROM builder AS runner
 
 # Run the application and expose the port
-EXPOSE 3000
+EXPOSE 3333
 CMD ["npm", "run", "start"]
