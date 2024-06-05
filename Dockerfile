@@ -16,6 +16,10 @@ RUN npm install
 
 FROM deps AS builder
 
+# We assume there is a DATABASE_URL environment variable
+# Print the DATABASE_URL environment variable for debugging
+RUN echo $DATABASE_URL
+
 # Move to the working directory
 WORKDIR /srv/feedback-api
 
