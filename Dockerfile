@@ -1,4 +1,5 @@
 FROM node:20 AS base
+ARG DATABASE_URL
 
 # Copy the project server files
 COPY ./server /srv/feedback-api
